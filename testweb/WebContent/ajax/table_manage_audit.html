@@ -1,0 +1,74 @@
+<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+<link href="assets/plugins/DataTables/css/data-table.css" rel="stylesheet" />
+<!-- ================== END PAGE LEVEL STYLE ================== -->
+
+<!-- begin #content -->
+<div id="content" class="content">
+    <!-- begin page-header -->
+    <h1 class="page-header">审计报表<small>4A防绕行分析</small></h1>
+    <!-- end page-header -->
+    
+    <!-- begin row -->
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="col-md-12">
+            <!-- begin panel -->
+            <div class="panel panel-inverse">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                    </div>
+                    <h4 class="panel-title">审计报表</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                    	<div id="container">
+		<div id="taheader">
+			<ul class="myclass" style="list-style-type: none">
+				<h1>统计信息:</h1>
+				<li >日志总数量：256</li>
+				<li >威胁总数量：256</li>
+				<li>高威胁数量：256</li>
+			</ul>
+		</div>
+		<div id="main">
+			<ul class="myclass" style="list-style-type: none">
+				<h1>
+					<font>生成报表：</font>
+				</h1>
+				<li><select name="yyyy1" id="yyyy1"></select>年 <select name="mm1" id="mm1"></select>月 <select name="dd1" id="dd1"></select>日</li>
+				<li>到</li>
+				<li><span width="30%">
+						<select name="yyyy2" id="yyyy2"></select>年 <select name="mm2" id="mm2"></select>月 <select
+							name="dd2" id="dd2"></select>日
+					</span>
+					<span style="float:right, width=20%">
+						<input type="button" value="生成下载">
+					</span></li>
+			</ul>
+		</div>
+	</div>
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+        <!-- end col-10 -->
+    </div>
+    <!-- end row -->
+</div>
+<!-- end #content -->
+		
+<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+<script>
+    App.restartGlobalFunction();
+    App.setPageTitle('分析展示 | 结果展示');
+    
+    $.getScript('assets/js/table-manage-colvis.demo.min.js').done(function() {
+        TableManageColVis.init();
+    });
+</script>
+<!-- ================== END PAGE LEVEL JS ================== -->

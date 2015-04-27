@@ -1,0 +1,99 @@
+<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+<link href="assets/plugins/DataTables/css/data-table.css" rel="stylesheet" />
+<!-- ================== END PAGE LEVEL STYLE ================== -->
+
+<!-- begin #content -->
+<div id="content" class="content">
+    <!-- begin page-header -->
+    <h1 class="page-header">场景库信息：</h1>
+    <!-- end page-header -->
+    
+    <!-- begin row -->
+    <div class="row">
+        <!-- begin col-12 -->
+        <div class="col-md-12">
+            <!-- begin panel -->
+            <div class="panel panel-inverse">
+                <div class="panel-heading">
+                    <div class="panel-heading-btn">
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                    </div>
+                    <h4 class="panel-title">异常行为场景库</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table id="data-table" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>场景类型</th>
+                                    <th>场景名称</th>
+									<th>场景说明</th>
+                                    <th>审计内容</th>
+                                    <th>预警级别</th>
+                                    <th>审计周期</th>
+                                    <th>备注</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="odd gradeX">
+                                    <td>绕行4A</td>
+                                    <td>常规绕行4A</td>
+									<td>此场景审计通过合规手段，绕行4A认证功能的行为</td>
+                                    <td>异常登录审计用户直接通过核心域外IP，访问核心域内资源。</td>
+                                    <td>高级</td>
+                                    <td>实时</td>
+                                    <td>无</td>
+                                </tr>
+                                <tr class="even gradeC">
+                                    <td>绕行4A</td>
+                                    <td>非常规绕行4A行为</td>
+									<td>此场景审计直接绕过4A堡垒机，访问核心域的行为</td>
+                                    <td>用户也通过正常的方式登录4A平台，通过已授权的主机资源（如windows）访问其他已授权或未授权资源。</td>
+                                    <td>高级</td>
+                                    <td>实时</td>
+                                    <td>非常规绕行行为无法溯源</td>
+                                </tr>
+                                <tr class="odd gradeA">
+                                    <td>绕行4A</td>
+                                    <td>常规工程类绕行4A系统</td>
+									<td>审计通过进入机房等行为，绕行系统</td>
+                                    <td>因为工程割接、系统故障需进入机房，直接服务器console、ILO、交换机等访问行为。</td>
+                                    <td>高级</td>
+                                    <td>实时</td>
+                                    <td>无</td>
+                                </tr>
+                                <tr class="odd gradeA">
+                                    <td>绕行4A</td>
+                                    <td>绕行后高频访问</td>
+									<td>此场景审计正常登陆之后，对核心域其他资产进行高频访问</td>
+                                    <td>通过已授权的主机资源（如windows）尝试访问未授权的主机资源。行为疑似扫描、暴力破解密码等攻击行为。</td>
+                                    <td>高级</td>
+                                    <td>日</td>
+                                    <td>无</td>
+                                </tr>								
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end panel -->
+        </div>
+        <!-- end col-10 -->
+    </div>
+    <!-- end row -->
+</div>
+<!-- end #content -->
+		
+<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+<script>
+    App.restartGlobalFunction();
+    App.setPageTitle('分析展示 | 结果展示');
+    
+    $.getScript('assets/js/table-manage-colvis.demo.min.js').done(function() {
+        TableManageColVis.init();
+    });
+</script>
+<!-- ================== END PAGE LEVEL JS ================== -->
